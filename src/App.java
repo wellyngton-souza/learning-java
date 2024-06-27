@@ -73,6 +73,22 @@ public class App {
         input.close();
     }
 
+    public static void callClass(){
+        Cars carInstance = new Cars("fiat", 2006);
+        
+        carInstance.start();
+        carInstance.accelerate();
+        carInstance.brake();
+    }
+
+    public static void createFinal(){
+        // com o final, após a criação de valor, ele se torna inalteravel
+        final double pi = 3.14;
+        pi++;
+
+        // final pode ser muito útil em classes, pois com isso não consigo criar varios valores com o mesmo nome em classes herdadas
+    }
+
     // String[] args
     // MyApp arg1 arg2
     // argumentos direto pelo prompt
@@ -80,6 +96,9 @@ public class App {
     public static void main() throws Exception {
         variables();
         arrays();
+        inputs();
         whileLoop();
+        callClass();
+        createFinal();
     }
 }
