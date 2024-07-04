@@ -84,9 +84,24 @@ public class App {
     public static void createFinal(){
         // com o final, após a criação de valor, ele se torna inalteravel
         final double pi = 3.14;
-        pi++;
+        System.out.println(pi);
+        // pi++;
 
         // final pode ser muito útil em classes, pois com isso não consigo criar varios valores com o mesmo nome em classes herdadas
+    }
+
+    public static void exceptionUse(){
+        try{
+            int A = 10;
+            int B = 0;
+
+            int division = A / B;
+            System.out.println(division);
+        } catch (ArithmeticException e){
+            System.out.println(e);
+        } catch (NumberFormatException ep){
+            System.out.println(ep);
+        }
     }
 
     // String[] args
@@ -94,11 +109,6 @@ public class App {
     // argumentos direto pelo prompt
 
     public static void main() throws Exception {
-        variables();
-        arrays();
-        inputs();
-        whileLoop();
-        callClass();
-        createFinal();
+        exceptionUse();
     }
 }
