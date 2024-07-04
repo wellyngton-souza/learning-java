@@ -1,6 +1,6 @@
 import java.util.Scanner; // biblioteca do input
 
-public class App {
+public class Main {
     public static void variables(){
         int age = 12;
         double pi = 3.14;
@@ -98,9 +98,9 @@ public class App {
             int division = A / B;
             System.out.println(division);
         } catch (ArithmeticException e){
-            System.out.println(e);
+            System.out.println(e + " \n\n linha 1");
         } catch (NumberFormatException ep){
-            System.out.println(ep);
+            System.out.println(ep + " \n\n linha 2");
         }
     }
 
@@ -108,7 +108,7 @@ public class App {
     // MyApp arg1 arg2
     // argumentos direto pelo prompt
 
-    public static void main() throws Exception {
+    public static void main(String[] args) {
         exceptionUse();
     }
 }
