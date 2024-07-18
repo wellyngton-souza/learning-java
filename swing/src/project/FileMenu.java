@@ -4,6 +4,7 @@ import java.awt.FileDialog;
 import javax.swing.JFrame;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileMenu {
@@ -36,6 +37,40 @@ public class FileMenu {
                 };
             } catch (IOException e){
                 System.out.println("File not opened" + e);
+            }
+        }
+    }
+
+    public static void saveAs(){
+        FileDialog fileDialog = new FileDialog(frame, "save As", FileDialog.SAVE);
+        fileDialog.setVisible(true);
+
+        if(fileDialog.getFile() != null){
+            diretory = fileDialog.getDirectory();
+            fileName = fileDialog.getFile();
+            filePath = diretory + fileName;
+            Frame.frame.setTitle(fileName);
+
+            try{
+                FileWriter writer = new FileWriter(filePath);
+                writer.write(Frame.textArea.getText());
+                writer.close();
+            } catch(IOException e){
+                System.out.println("File can not be saved");
+            }
+        }
+    }
+
+    public static void save(){
+        if(filePath == null){
+            saveAs();
+        } else{
+            try{
+                FileWriter writer = new FileWriter(filePath);
+                writer.write(Frame.textArea.getText());
+                writer.close();
+            } catch(IOException e){
+                System.out.println("File can not be saved");
             }
         }
     }
